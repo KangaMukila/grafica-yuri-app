@@ -19,7 +19,7 @@
 
         <div class="flex flex-col items-start gap-4 rounded-xl border border-slate-200 bg-slate-50 p-4 sm:flex-row sm:items-center">
             @if ($user->foto_perfil)
-                <img src="{{ \Illuminate\Support\Facades\Storage::disk('public')->url($user->foto_perfil) }}" alt="Foto atual" class="h-20 w-20 rounded-full object-cover ring-4 ring-white shadow-sm">
+                <img src="{{ asset('storage/' . $user->foto_perfil) }}" alt="Foto atual" class="h-20 w-20 rounded-full object-cover ring-4 ring-white shadow-sm">
             @else
                 <div class="flex h-20 w-20 items-center justify-center rounded-full bg-sky-100 text-2xl font-bold text-sky-700 shadow-sm">
                     {{ strtoupper(substr($user->name ?? 'U', 0, 1)) }}

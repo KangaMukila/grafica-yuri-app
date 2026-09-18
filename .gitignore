@@ -22,11 +22,9 @@
 /storage/pail
 /vendor
 .history/
+.vercel/
 _ide_helper.php
 Homestead.json
 Homestead.yaml
 Thumbs.db
 
-.vercel
-
-.qodo/

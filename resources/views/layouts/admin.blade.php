@@ -17,7 +17,7 @@
             <a href="{{ route('home') }}" class="group flex min-w-0 items-center gap-3" aria-label="Ir para a página principal">
                 <span class="brand-mark shrink-0">
                     @if ($logo)
-                        <img src="{{ \Illuminate\Support\Facades\Storage::disk('public')->url($logo) }}" alt="Logotipo" class="h-7 w-7 rounded-md object-contain">
+                        <img src="{{ asset('storage/' . $logo) }}" alt="Logotipo" class="h-7 w-7 rounded-md object-contain">
                     @else
                         <x-application-logo class="h-7 w-7 fill-current" />
                     @endif
@@ -94,7 +94,7 @@
             <div class="mb-3 flex items-center gap-3 px-2">
                 @php($usuarioAtual = auth()->user())
                 @if ($usuarioAtual?->foto_perfil)
-                    <img src="{{ \Illuminate\Support\Facades\Storage::disk('public')->url($usuarioAtual->foto_perfil) }}" alt="Foto de perfil" class="h-10 w-10 rounded-full object-cover ring-2 ring-white/20">
+                    <img src="{{ asset('storage/' . $usuarioAtual->foto_perfil) }}" alt="Foto de perfil" class="h-10 w-10 rounded-full object-cover ring-2 ring-white/20">
                 @else
                     <span class="user-avatar">{{ strtoupper(substr($usuarioAtual?->name ?? 'U', 0, 1)) }}</span>
                 @endif

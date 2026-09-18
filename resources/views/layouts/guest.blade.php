@@ -26,7 +26,7 @@
                     <a href="{{ url('/') }}" class="guest-brand" aria-label="{{ $nomeGrafica }}">
                         <span class="guest-brand__logo">
                             @if ($logo)
-                                <img src="{{ \Illuminate\Support\Facades\Storage::disk('public')->url($logo) }}" alt="Logotipo {{ $nomeGrafica }}">
+                                <img src="{{ asset('storage/' . $logo) }}" alt="Logotipo {{ $nomeGrafica }}">
                             @else
                                 <x-application-logo class="h-12 w-12 fill-current" />
                             @endif
@@ -56,7 +56,7 @@
                         <a href="{{ url('/') }}" class="guest-brand" aria-label="{{ $nomeGrafica }}">
                             <span class="guest-brand__logo">
                                 @if ($logo)
-                                    <img src="{{ \Illuminate\Support\Facades\Storage::disk('public')->url($logo) }}" alt="Logotipo {{ $nomeGrafica }}">
+                                    <img src="{{ asset('storage/' . $logo) }}" alt="Logotipo {{ $nomeGrafica }}">
                                 @else
                                     <x-application-logo class="h-10 w-10 fill-current" />
                                 @endif

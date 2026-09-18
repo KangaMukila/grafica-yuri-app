@@ -12,7 +12,7 @@
     <header class="public-header">
         <div class="public-container flex items-center justify-between gap-4 py-4">
             <a href="{{ route('home') }}" class="public-brand" aria-label="Página principal">
-                <span class="public-logo">@if ($logo)<img src="{{ \Illuminate\Support\Facades\Storage::disk('public')->url($logo) }}" alt="Logotipo" class="h-10 w-10 rounded-lg object-contain">@else<x-application-logo class="h-9 w-9 fill-current" />@endif</span>
+                <span class="public-logo">@if ($logo)<img src="{{ asset('storage/' . $logo) }}" alt="Logotipo" class="h-10 w-10 rounded-lg object-contain">@else<x-application-logo class="h-9 w-9 fill-current" />@endif</span>
                 <span><strong>{{ $nomeGrafica ?? 'Gráfica Yuri' }}</strong><small>Impressão que marca</small></span>
             </a>
             <nav class="hidden items-center gap-6 text-sm font-semibold text-slate-600 sm:flex" aria-label="Navegação pública">
