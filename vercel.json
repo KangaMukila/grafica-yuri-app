@@ -1,0 +1,20 @@
+{
+    "version": 2,
+    "buildCommand": "composer install --no-dev --prefer-dist --optimize-autoloader --no-interaction && npm run build",
+    "builds": [
+        {
+            "src": "api/index.php",
+            "use": "vercel-php@0.7.4"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/build/(.*)",
+            "dest": "/public/build/$1"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/api/index.php"
+        }
+    ]
+}
